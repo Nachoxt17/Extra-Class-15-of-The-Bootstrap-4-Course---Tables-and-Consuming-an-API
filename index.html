@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap 4 Course Class 15 - Tables and Consuming an API (Extra Class Made by Me).</title>
+    <!--+-Tablas de Bootstrap 4. El Objetivo de esta Clase es Aprender a usar las Tablas(Tables) de Bootstrap 4 y Consumir una API y representando en Formato Lista sus Datos y Ordenarlos por 
+    Nombre - email - Direccion - Ciuidad  y Código Postal. Las Tablas(Tables) para poner en esa Disposición Cualquier tipo de Información.
+
+    +-Una API(Application Programming Interface) que en Español significa "Interfaz de programación de aplicaciones" es un conjunto de reglas (código) y especificaciones que las aplicaciones 
+    pueden seguir para comunicarse entre ellas: sirviendo de interfaz entre programas diferentes de la misma manera en que la interfaz de usuario facilita la interacción humano-software, de 
+    forma que una Aplicación o Página Web pueda Utilizar Información o Código Útiles de otras Páginas Web, Software o Aplicaciones que se hayan puesto a disposición para ser usadas de forma 
+    pública. 
+    EJEMPLOS de esto son las aplicaciones de GPS, de Envíos o Mandados(Como Uber, UberEats, Rappi, Glovo, etc) que usan en sus Mapas los Mapas de Google Maps; esto resulta MUY Útil ya que es
+    mucho más Fácil y Barato usar los Mapas que están a Disposición Pública de Google Maps a que cada Empresa tenga que Desarrollar sus propios Mapas para sus Aplicaiones y Páginas Web, lo
+    cual llevaría Mucho Tiempo y Dinero y sería Muy Dificil, Entonces ¿Para qué emplear taaaanto Tiempo y Dinero en Desarrollar mis propios Mapas si alguien ya lo hizo y pone sus Mapas a
+    Disposición Pública?. Este es solo un Ejemplo, las APIs pueden ser tanto de Disposición Pública como Privada, y usarse para traer de afuera hacia adentro de la Aplicación/Página Web
+    todo tipo de Información o Métodos que puedan ser Útiles.
+  
+    JUNTO A ESTE ARCHIVO index.html VIENE OTRO ARCHIVO index.js QUE CONTIENE TODA LA PARTE INTERACTIVA DE LA API Y TAMBIÉN ESTÁ COMENTADO.-->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Con este Link accedemos a los Archivos de Instalación para CSS de Bootstrap 4 en su Servidor Oficial para tenerlo sin Instalarlo en Nuestra PC.-->
+
+</head>
+<body>
+    <h1 class="h1 text-center">Bootstrap 4 Tables and Consuming an API:_</h1>
+
+    <hr class="bg-dark">
+
+    <h2 class="h2 text-center">Default HTML Table Example:_</h2>
+    <br>
+    <!--Antes de ver las Tablas(Tables) en Bootstrap 4 debemos ver cómo se hacen las Tablas(Tables) Base en HTML. Para Crearlas, Primero Creamos el Elemento <table> que va a ser la Tabla en sí, y dentro de ella cada
+    Fila de la Tabla(Table Row) se Define con un Elemento <tr> que contiene sus iniciales, y dentro de esta Primera Fila de la Tabla(Table Row) se se van a definir El Encabezado Único y Principal de la Tabla 
+    (Table Head) con el Elemento <thead> y dentro del cual vamos a poner los Encabezados de la Tabla(Table Headers) con un Elemento <th> (que Por Defecto aparecen en Negrita y Centrados) con el atributo
+     "scope="col"" por Cada Categoría/División/Clasificación de la Información que va a ser Desplegada en lista debajo de cada Encabezado de la Tabla(Table Header). Ya fuera del Encabezado Único y Principal de la 
+    Tabla(Table Head) y debajo de él va a ir el Cuerpo de La Tabla(Table Body) con un Elemento <tbody> dentro del cual va a ir la Información en Sí. Dentro del mismo, por cada Fila de la Tabla(Table Row) vamos a 
+    crear nuevamente un Elemento <tr> dentro de las cuales van a ir en este caso los Datos de Cada Usuario, y para poner la Información Correspondiente en cada Celda De Información de La Tabla(Table Data) debajo 
+    de Cada Encabezado de la Tabla(Table Header) que le Corresponda, ponemos Cada Dato creando por Cada Uno un Elemento <td>(Table Data) dentro del Cual escribir la Información en el Mismo Orden que estaban los
+    Encabezados de la Tabla(Table Header).
+    NOTA:_En el Ejemplo Siguiente se usa un <th> para el Nombre del Usuario al Principio de cada Elemento <tr> para que Por Defecto en Texto aparecezca en Negrita y Centrado.-->
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">E-mail Address</th>
+          <th scope="col">Street Address</th>
+          <th scope="col">City</th>
+          <th scope="col">Zip Code</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr> 
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr>  
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr> 
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr> 
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr>         
+      </tbody>
+    </table>
+
+  <hr class="bg-dark">
+
+  <h2 class="h2 text-center">HTML Table Stylized with Bootstrap 4 Classes Example:_</h2>
+    <br>
+    <!--lomismo que el Ejemplo Anterior, pero ahora empezamos a Estilizar las Tablas(Tables) usando las Clases Predefinidas de Bootstrap 4, que funciona Escribiendo Primero la class="table" y después con la Misma 
+    Configuración para Colores(primary, info, secondary, success, light, dark, warning Y danger) y Tamaños(sm, md, lg, xl). Para más Información, leer la Documentación de Las Tablas de Bootstrap 4 en:_
+    https://getbootstrap.com/docs/4.0/content/tables/ .-->
+
+    <table class="table table-bordered table-success table-md">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">E-mail Address</th>
+          <th scope="col">Street Address</th>
+          <th scope="col">City</th>
+          <th scope="col">Zip Code</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr> 
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr>  
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr> 
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr> 
+        <tr>
+          <th scope="row">*User Name*</th>
+          <td>|*User Email*|</td>
+          <td>|*User Adress Street* *User Adress Suite*|</td>
+          <td>|*User Adress City*|</td>
+          <td>|*User Adress ZipCode*|</td>
+        </tr>         
+      </tbody>
+    </table>
+
+  <hr class="bg-dark">
+    
+  <h2 class="h2 text-center">Bootstrap 4 Table Final Result and Consuming an API:_</h2>
+  <br>
+  <!--Lo mismo que en los Ejemplos Anteriores, esto es una Tabla de HTML Estilizada con las Clases de Estilo para Tablas de Bootstrap 4 con lo Nuevo de que Aquí se Consume una API para poner los Usuarios y su 
+    Información en vez de Escribirla Directamente en el HTML como en los Ejemplos Anteriores. Todo lo relacionado al Consumo de una API se explicará a continuación y en el Archivo Adjunto a este, "index.js".-->
+
+    <table class="table table-bordered table-ligth">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">E-mail Address</th>
+          <th scope="col">Street Address</th>
+          <th scope="col">City</th>
+          <th scope="col">Zip Code</th>
+        </tr>
+      </thead>
+
+      <tbody id ='userList'>
+      <!--A este Elemento <tbody> le pusimos el id ='userList' para poder Identificarlo después en nuestro Archivo "index.js"; Acá mismo debería ir el Código que Representa a los Datos en Forma de Lista en Tablas,
+      se supone que debe ser un "DIV", pero puede ser cualquier Elemento-Contenedor dentro del cual pueda ir el Código.-->            
+      </tbody>
+    </table>
+
+  <hr class="bg-dark">
+
+
+
+
+   <!-- Si utilizamos componentes de Bootstrap que requieran Javascript debemos agregar estos tres archivos -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+   <!--Acá voy a hacer MI JavaScipt, Este Elemento <script> tiene como Fuente(source, src) el Archivo "index.js" donde hice una Función que tome como Argumento a la API que es una Lista de Usuarios y 
+    Represente los Datos Pedidos en Forma de Tabla.-->
+   <script src="index.js"></script>
+   
+</body>
+</html>
